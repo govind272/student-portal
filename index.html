@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Academic Portal</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:#f4f6f8;
+}
+
+#topbar{
+background:black;
+color:white;
+padding:6px;
+text-align:center;
+font-size:14px;
+}
+
+#header{
+background:white;
+padding:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-bottom:1px solid #ccc;
+}
+
+#logo{
+
+width:50px;
+margin-right:15px;
+
+}
+
+#title{
+
+text-align:left;
+
+}
+
+#title h2{
+
+color:#8b0000;
+margin:0;
+
+}
+
+#nav{
+
+background:#e6e6e6;
+padding:10px;
+text-align:center;
+
+}
+
+#nav a{
+
+margin:20px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+#banner{
+
+width:100%;
+height:260px;
+object-fit:cover;
+
+}
+
+#home{
+
+padding:30px;
+
+}
+
+#card{
+
+background:white;
+padding:20px;
+width:500px;
+margin:auto;
+box-shadow:0 0 8px gray;
+
+}
+
+#gallery{
+
+display:none;
+padding:30px;
+text-align:center;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+width:60%;
+
+margin:auto;
+
+}
+
+.grid img{
+
+width:100%;
+cursor:pointer;
+transition:0.3s;
+border-radius:6px;
+
+}
+
+.grid img:hover{
+
+transform:scale(1.05);
+
+}
+
+#verify{
+
+display:none;
+text-align:center;
+margin-top:60px;
+
+}
+
+button{
+
+padding:8px 18px;
+background:#8b0000;
+color:white;
+border:none;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#a50000;
+
+}
+
+#barBox{
+
+width:300px;
+background:#ddd;
+margin:auto;
+margin-top:10px;
+
+}
+
+#bar{
+
+width:0%;
+background:green;
+color:white;
+padding:3px;
+
+}
+
+#footer{
+
+background:#222;
+color:white;
+padding:25px;
+display:flex;
+justify-content:space-around;
+margin-top:100px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="topbar">
+
+diet.barabanki1@gmail.com | contact: +91-7947109648,+91-5240234119
+
+</div>
+
+<div id="header">
+
+<img id="logo"
+src="logo.png">
+
+<div id="title">
+
+<h2>DISTRIC INSTITUTE OF EDUCATION AND TRAINING
+</h2>
+
+<p>BARABANKI, UTTAR PRADESH</p>
+
+</div>
+
+</div>
+
+<div id="nav">
+
+<a onclick="home()">Home</a>
+
+<a onclick="openGallery()">Gallery</a>
+
+<a>Notice</a>
+
+<a>Contact</a>
+
+</div>
+
+<img src="banner 1.png"
+id="banner">
+
+<div id="home">
+
+<div id="card">
+
+<h3>About DIET</h3>
+
+<p>
+District Institute of Educational Training (DIETs) In view of the recommendations of the
+
+National Policy of Education (NPE, 1986) developed developed under the guidance of then late Prime Minister of India Shri Rajiv Gandhi, District Institute of Educational Training (DIET) were established across the Country. As of now more than 500+ districts of the country have DIETs. DIETS were established with the prime objectives of imparting training to all concerned officials and is the only institute of its nature at the district level.
+</p>
+
+<p>
+
+<b>Latest Notice:</b><br>
+
+Internal practical exams from 15 April.
+
+</p>
+
+<p>
+
+<b>Last Updated:</b> April 2026
+
+</p>
+
+</div>
+
+</div>
+
+<div id="gallery">
+
+<h2>Campus Photo Gallery</h2>
+
+<div class="grid">
+
+<img src="image 2.png"
+onclick="verify()">
+
+<img src="image 3.png"
+onclick="verify()">
+
+<img src="image 4.png"
+onclick="verify()">
+
+<img src="image 5.png"
+onclick="verify()">
+
+</div>
+
+<p>Click image to view full size</p>
+
+</div>
+
+<div id="verify">
+
+<h3>Student Verification Required</h3>
+
+<p>Enter your name to continue</p>
+
+<input id="name">
+
+<br><br>
+
+<button onclick="prank()">
+
+Verify Student
+
+</button>
+
+<p id="result"></p>
+
+<div id="barBox">
+
+<div id="bar">
+
+0%
+
+</div>
+
+</div>
+
+</div>
+
+<div id="footer">
+
+<div>
+
+<h3>Quick Links</h3>
+
+Home<br>
+Gallery<br>
+Notice
+
+</div>
+
+<div>
+
+<h3>Address</h3>
+
+Academic Campus
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+portal@student.edu
+
+</div>
+
+</div>
+
+<script>
+
+function home(){
+
+document.getElementById("home").style.display="block";
+
+document.getElementById("gallery").style.display="none";
+
+document.getElementById("verify").style.display="none";
+
+}
+
+function openGallery(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("gallery").style.display="block";
+
+document.getElementById("verify").style.display="none";
+
+}
+
+function verify(){
+
+document.getElementById("gallery").style.display="none";
+
+document.getElementById("verify").style.display="block";
+
+}
+
+function prank(){
+
+let p=0;
+
+let bar=
+document.getElementById("bar");
+
+let text=
+document.getElementById("result");
+
+text.innerHTML=
+"Connecting secure server...";
+
+let interval=
+setInterval(function(){
+
+p++;
+
+bar.style.width=p+"%";
+
+bar.innerHTML=p+"%";
+
+if(p==30)
+text.innerHTML=
+"Fetching student data...";
+
+if(p==60)
+text.innerHTML=
+"Verifying academic records...";
+
+if(p==85)
+text.innerHTML=
+"Finalizing report...";
+
+if(p>=100){
+
+clearInterval(interval);
+
+
+
+bar.style.background="green";
+text.innerHTML="Record Found ✅";
+
+text.innerHTML=
+document.getElementById("name").value +
+" is April Fool 😂";
+
+}
+
+},35);
+
+}
+
+let banners=[
+"banner 1.png",
+"banner 2.png",
+"banner 3.png"
+];
+
+let i=0;
+
+setInterval(function(){
+
+i++;
+
+if(i>=banners.length){
+
+i=0;
+
+}
+
+document.getElementById("banner").src=
+banners[i];
+
+},3000);
+
+
+
+</script>
+
+</body>
+
+</html>
